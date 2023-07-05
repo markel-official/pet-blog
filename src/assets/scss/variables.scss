@@ -1,0 +1,11 @@
+:root {
+	--paper-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+	--post-shadow: 0px 5px 10px rgba(0, 3, 56, 0.2);
+	--footer-shadow: -1px 5px 10px rgba(0, 3, 56, 0.2);
+}
+
+.dark-mode {
+	--paper-shadow: 0px 5px 10px rgba(229, 229, 229, 0.2);
+	--post-shadow: 0px 5px 10px rgba(0, 10, 195, 0.2);
+	--footer-shadow: -1px 5px 10px rgba(0, 10, 195, 0.2);
+}

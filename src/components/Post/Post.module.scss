@@ -1,0 +1,220 @@
+$blue: #4361ee;
+
+.root {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  // overflow: hidden;
+  margin-bottom: 15px;
+
+  &:hover,
+  &:focus {
+    .editButtons {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: inherit;
+    z-index: -1;
+    pointer-events: none;
+    box-shadow: var(--post-shadow);
+    opacity: 0;
+    transition: opacity 0.35s ease-out;
+  }
+
+  &:not(.rootFull):hover,
+  &:not(.rootFull):focus {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+
+  &Full {
+    min-height: 300px;
+    height: 100%;
+
+    @media screen and (max-width: 460px) {
+      min-height: 220px;
+    }
+
+    @media screen and (max-width: 390px) {
+      min-height: 180px;
+    }
+    @media screen and (max-width: 370px) {
+      min-height: 150px;
+    }
+  }
+
+  @media screen and (max-width: 460px) {
+    max-height: 180px;
+  }
+
+  @media screen and (max-width: 390px) {
+    max-height: 150px;
+  }
+}
+
+.wrapper {
+  padding: 10px 20px 20px;
+
+  @media screen and (max-width: 460px) {
+    padding: 10px;
+  }
+}
+
+.content {
+  margin: 30px 0 50px;
+
+  p {
+    font-size: 22px;
+    line-height: 163%;
+
+    @media screen and (max-width: 460px) {
+      font-size: 17px;
+    }
+  }
+}
+
+// .indention {
+//   padding-left: 40px;
+
+//   @media screen and (max-width: 600px) {
+//     padding-left: 0;
+//   }
+// }
+
+.title {
+  font-size: 28px;
+  margin: 0;
+
+  a {
+    text-decoration: none;
+    color: #000;
+
+    &:hover,
+    &:focus {
+      color: $blue;
+    }
+  }
+
+  @media screen and (max-width: 460px) {
+    font-size: 16px;
+  }
+
+  &Full {
+    font-size: 42px;
+    font-weight: 900;
+
+    @media screen and (max-width: 600px) {
+      font-size: 32px;
+    }
+    @media screen and (max-width: 420px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+
+  li {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 15px;
+    opacity: 0.5;
+
+    @media screen and (max-width: 460px) {
+      font-size: 13px;
+      margin-right: 12px;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
+
+.postDetails {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    margin-right: 20px;
+    opacity: 0.5;
+
+    svg {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.skeleton {
+  background-color: #fff;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 15px;
+
+  &Content {
+    padding: 20px;
+  }
+
+  // &Info {
+  //   margin-left: 50px;
+  // }
+}
+
+.skeletonUser {
+  display: flex;
+
+  &Details {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.skeletonTags {
+  display: flex;
+
+  span {
+    margin-right: 15px;
+  }
+}
+
+.editButtons {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}

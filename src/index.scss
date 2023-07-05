@@ -1,0 +1,38 @@
+@import "reset-css";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F5F5F5 !important;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  margin-bottom: 20px;
+}
+
+.footer {
+  flex: 0 1 auto;
+}
+
+.menu-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .socialNetworksBlock {
+    display: none;
+  }
+}

@@ -1,0 +1,165 @@
+@import "../../assets/scss/variables.scss";
+
+.root {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+  box-shadow: var(--paper-shadow);
+  background-color: #fff;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  flex: 0 1 200px;
+  max-width: 200px;
+  line-height: 1;
+}
+
+.logoSvg {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-left: 12px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 900px) {
+    flex-wrap: wrap;
+
+    & > * {
+      flex: 1 1 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    button {
+      margin-top: 12px;
+      margin-left: 0;
+      margin-right: 0;
+      display: flex;
+      width: 100%;
+    }
+  }
+}
+
+.profileWrapper {
+  display: flex;
+  align-items: center;
+
+  & > div {
+    min-width: initial;
+    margin-right: 6px;
+    color: #333;
+
+    span {
+      transition: opacity 0.35s ease-out;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      span {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  & img {
+    transform-origin: center;
+    transform: scale3d(1, 1, 1);
+    transition: transform 0.35s ease-out;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    img {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    justify-content: center;
+
+    & > div {
+      flex: 0 1 auto;
+    }
+  }
+}
+
+.menu {
+  @media screen and (max-width: 900px) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    z-index: 100;
+    pointer-events: none;
+  }
+
+  &--open {
+    pointer-events: all;
+
+    .menuOverlay {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .menuWrapper {
+      transform: translate3d(0%, 0, 0);
+    }
+  }
+}
+
+.menuOverlay {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(#000000, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease-out;
+
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
+}
+
+.menuWrapper {
+  @media screen and (max-width: 900px) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    max-width: 80vw;
+    width: 500px;
+    display: block;
+    background-color: #fff;
+    padding: 70px 40px;
+    transform: translate3d(100%, 0, 0);
+    transition: transform 0.35s ease-out;
+  }
+}

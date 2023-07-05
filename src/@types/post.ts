@@ -1,0 +1,1 @@
+// TODO: Add a IPost interface here!

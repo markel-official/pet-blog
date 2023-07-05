@@ -1,0 +1,10 @@
+@import "../../assets/scss/variables.scss";
+
+.root {
+  margin-bottom: 20px;
+  box-shadow: var(--paper-shadow);
+}
+
+.title {
+  padding: 15px 15px 0 15px;
+}
